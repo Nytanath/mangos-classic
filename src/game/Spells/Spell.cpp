@@ -6307,10 +6307,11 @@ SpellCastResult Spell::CheckItems()
                         continue;
                     }
 
-                    Powers power = Powers(m_spellInfo->EffectMiscValue[i]);
-                    if (target->GetPower(power) == target->GetMaxPower(power))
+                    Powers currentType = target->GetPowerType();
+                    if (target->GetPower(currentType) == target->GetMaxPower(currentType))
                     {
                         failReason = SPELL_FAILED_ALREADY_AT_FULL_POWER;
+                        continue;
                     }
                     else
                     {
