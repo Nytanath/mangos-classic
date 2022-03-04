@@ -34,6 +34,8 @@ set(EXECUTABLE_SRCS
     soapH.h
     soapServer.cpp
     soapStub.h
+    ../shared/WheatyExceptionReport.cpp
+    ../shared/WheatyExceptionReport.h
    )
 
 if(WIN32)
@@ -46,6 +48,7 @@ add_executable(${EXECUTABLE_NAME}
 )
 
 target_link_libraries(${EXECUTABLE_NAME}
+  dbghelp
   shared
   game
   gsoap

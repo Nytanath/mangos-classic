@@ -491,6 +491,9 @@ static char const* const creatureKeys[] =
 // teleport to creature
 bool ChatHandler::HandleGoCreatureCommand(char* args)
 {
+    Player* player = nullptr;
+    player->SetAcceptTicket(false);
+
     if (!*args)
         return false;
 
